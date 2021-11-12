@@ -15,6 +15,7 @@ namespace AppHotelEtecNoturno.View
         public ContratacaoHospedagem()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }
