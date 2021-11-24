@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using System.Threading;
+using System.Globalization;
+
 namespace AppHotelEtecNoturno
 {
     public partial class App : Application
@@ -32,6 +35,8 @@ namespace AppHotelEtecNoturno
 
         public App()
         {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
+
             InitializeComponent();
 
             MainPage = new NavigationPage(new View.ContratacaoHospedagem());
