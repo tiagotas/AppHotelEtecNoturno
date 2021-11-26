@@ -4,5 +4,11 @@
              x:Class="AppHotelEtecNoturno.App">
     <Application.Resources>
 
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="DarkRed" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        </Style>
+
     </Application.Resources>
 </Application>
