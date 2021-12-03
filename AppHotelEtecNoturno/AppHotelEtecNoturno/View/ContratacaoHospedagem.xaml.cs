@@ -22,6 +22,8 @@ namespace AppHotelEtecNoturno.View
 
             PropriedadesApp = (App) Application.Current;
 
+            lbl_usuario.Text = App.Current.Properties["usuario_logado"].ToString();
+
             pck_suite.ItemsSource = PropriedadesApp.lista_suites;
 
             dtpck_checkin.MinimumDate = DateTime.Now;
@@ -58,6 +60,18 @@ namespace AppHotelEtecNoturno.View
             catch (Exception ex)
             {
                 DisplayAlert("Ops", ex.Message, "OK");
+            }
+        }
+
+        private async void Button_Clicked_1(object sender, EventArgs e)
+        {
+            bool confime = await DisplayAlert("Tem Certeza?", 
+                                              "Desconectar sua conta ?",
+                                              "Sim", "Não");
+            if(confime)
+            {
+                App.Current.Properties.Remove("usuario_logado");
+                App.Current.MainPage = new Login();
             }
         }
     }
